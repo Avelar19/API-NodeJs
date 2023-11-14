@@ -1,6 +1,7 @@
 const connection = require('../config/dbConnection');
 
-
+// Esta função recebe um objeto task como parâmetro, que deve conter propriedades como nome, cnpj, telefone e endereco. 
+// A função realiza uma operação de inserção na tabela "clinicas" com os valores fornecidos e retorna a linha recém-criada.
 const createClinica = async (task) => {
     const {nome, cnpj, telefone, endereco} = task;
     const [createdClinica] = await connection.execute("INSERT INTO clinicas (nome, cnpj, telefone, endereco) VALUES (?, ?, ?, ?);",  
