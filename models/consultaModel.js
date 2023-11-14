@@ -1,7 +1,8 @@
 
 const connection = require('../config/dbConnection');
 
-
+// Assim como na função anterior, esta função recebe um objeto task como parâmetro, que deve conter propriedades específicas relacionadas a uma consulta, como dataConsulta, horaConsulta, tipoConsulta, etc. 
+// A função realiza uma operação de inserção na tabela "consultas" com os valores fornecidos e retorna a linha recém-criada.
 const createConsulta = async (task) => {
     const { dataConsulta, horaConsulta, tipoConsulta, obsPaciente, infosAdicionais, id_clinica, id_paciente, id_medico } = task;
     const query = "INSERT INTO consultas (dataConsulta, horaConsulta, tipoConsulta, obsPaciente, infosAdicionais, id_clinica, id_paciente, id_medico) VALUES (?, ?, ?, ?, ?, ?, ?, ?);"
